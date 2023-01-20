@@ -20,7 +20,8 @@ export function SignUp() {
       return alert("Preencha todos os campos!");
     }
     api.post("/users", { name, email, password }).then(() => {
-        alert("aaaa")
+        alert("Usuário criado com sucesso!")
+        navigate("/")
       }).catch((error) => {
         if (error.response) {
           alert(error.response.data.message);

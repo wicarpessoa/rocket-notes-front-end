@@ -51,6 +51,13 @@ export function New() {
     if (!title) {
       return alert("O título é obrigátorio");
     }
+  
+    if (links.length === 0){
+      return alert("Os links são obrigátorias");
+    }
+    if (tags.length === 0){
+      return alert("As Tags são obrigátorias");
+    }
     if (newLink) {
       return alert(
         "Você deixou um link no campo de adicionar, mas não clicou para salvar!"
@@ -61,7 +68,7 @@ export function New() {
         "Você deixou uma tag no campo de adicionar, mas não clicou para salvar!"
       );
     }
-
+    // console.log(links)
     await api.post("/notes", {
       title,
       description,
